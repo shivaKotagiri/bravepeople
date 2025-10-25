@@ -12,10 +12,11 @@ export default function Hero() {
                     <div className="leading-25 z-2 mr-45">launch</div>
                     <div className="w-[171px] h-[96px] absolute left-[40%]">
                         <Image alt="logo" 
-                            className="z-0 rounded-[100px] object-cover"
+                            className="z-0 rounded-[100px] object-cover brightness-80"
                             fill
                             src={"https://cdn.prod.website-files.com/658031e408a50a76013e5183/68bc614a66517b375079c7d1_d469d7a20ddc11d8df488b498873aa0c_bravepeople-teaser-reel.gif"} 
                         />
+                        <span className="text-base text-white tracking-wide absolute inset-0 flex items-center justify-center">play</span>
                     </div>
                     <div className="leading-0 z-2">digital</div>
                 </div>
@@ -23,7 +24,7 @@ export default function Hero() {
                     <div className="leading-none z-2 mr-20">experien­ces</div>
                     <div className="absolute w-[220] h-[211] top-[15%] left-[60%]">
                         <Image alt="logo" 
-                            className="z-0 h-auto hover:opacity-80 object-cover"
+                            className="z-0 h-auto hover:opacity-80 transition-opacity duration-400 object-cover"
                             fill
                             src={"https://cdn.prod.website-files.com/658031e408a50a76013e5183/68bcc2070b51d06488307d3a_683cf5a69ff407866c3051b9e5aded55_iPhone_15_Pro_Max_10-1-copy-main2-1465x980-p-1080.jpg"} 
                         />
@@ -34,7 +35,7 @@ export default function Hero() {
                     <div className="leading-25 z-2 mr-20">shape</div>
                     <div className="absolute w-[204px] h-[155px] top-[60%] left-[27%]">
                         <Image alt="logo" 
-                            className=" z-0 hover:opacity-80 object-cover"
+                            className=" z-0 hover:opacity-85 transition-opacity duration-400 object-cover"
                             fill
                             src={"https://cdn.prod.website-files.com/658031e408a50a76013e5183/68840d2477f6c7d14380dd64_rccl-watch2-p-800.jpg"} 
                         />
