@@ -14,9 +14,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`antialiased flex justify-center pt-6`}
-      >
+      <body className={`antialiased flex justify-center pt-6`}>
         <Navbar />
         {children}
       </body>

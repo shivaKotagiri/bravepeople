@@ -91,7 +91,7 @@ export default function Navbar() {
             <div 
                 onMouseEnter={() => setHover(true)} 
                 onMouseLeave={() => setHover(false)}
-                className="hover:bg-white overflow-hidden relative transition-colors duration-300 hover:text-black border cursor-pointer py-3 px-[22px] rounded-4xl bg-black text-white flex justify-center items-center w-[10rem]">
+                className="hover:bg-white overflow-hidden relative transition-colors duration-300 hover:text-black border cursor-pointer py-3 px-[22px] rounded-4xl bg-black text-white flex justify-center items-center w-[9.3rem]">
                 <div ref={splitRef} className="absolute inset-0 flex justify-center items-center z-0">work&nbsp;with&nbsp;us</div>
                 <div ref={textRef} className="absolute inset-0 flex justify-center items-center z-10">work&nbsp;with&nbsp;us</div>
             </div>
