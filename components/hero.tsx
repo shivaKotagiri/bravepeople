@@ -3,7 +3,7 @@ import Image from "next/image";
 
 export default function Hero() {
     return (
-        <div className="h-screen">
+        <div className="h-fit">
             <div className="mt-5">
                 <Image alt="logo" width={192} height={24} src={"/logo.svg"} />
             </div>
