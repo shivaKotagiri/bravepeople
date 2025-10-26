@@ -80,7 +80,7 @@ export default function Navbar() {
     }, [hover]);
 
     return (
-        <nav className="fixed w-fit shadow-lg bg-white uppercase text-sm font-medium p-[0.25rem] rounded-4xl flex flex-row gap-1">
+        <nav className="fixed z-20 w-fit shadow-lg bg-white uppercase text-sm font-medium p-[0.25rem] rounded-4xl flex flex-row gap-1">
             <div ref={navRef} className="flex justify-center items-center">
                 <Image src="/nav-logo.svg" width={16} height={16} alt="Logo" className="size-9" />
             </div>
