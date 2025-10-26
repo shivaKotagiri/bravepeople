@@ -46,7 +46,7 @@ export default function Carousel() {
                             </div>
                         ))}
                     </div>
-                    <div className="flex text-white mt-5">
+                    <div className="flex text-black mt-5">
                         <ArrowLeft className="stroke-[0.8]" size={70} />
                         <ArrowRight className="stroke-[0.8]" size={70} />
                     </div>
