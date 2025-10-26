@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import Navbar from "@/components/navbar";
+import { ReactLenis } from '@/utils/lenis';
 
 export const metadata: Metadata = {
   title: "Brave People",
@@ -14,9 +15,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`antialiased flex justify-center pt-6`}>
-        <Navbar />
-        {children}
+      <body className={`antialiased`}>
+        <ReactLenis root>
+          <div className="flex justify-center pt-6">
+            <Navbar />
+            {children}
+          </div>
+        </ReactLenis>
       </body>
     </html>
   );
