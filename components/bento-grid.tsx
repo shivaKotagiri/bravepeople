@@ -3,7 +3,7 @@ import Image from "next/image";
 
 export default function BentoGrid() {
     return (
-        <div className="w-full grid grid-cols-7 mt-20 gap-2">
+        <div className="w-full grid grid-cols-7 mt-20 gap-2 px-[3%] lg:px-[8%]">
             <div className="col-span-3 w-full h-[780px] relative overflow-hidden cursor-pointer rounded-[45px]">
                 <Image 
                     className="w-full hover:scale-115 transition-transform duration-300 scale-110 h-full absolute inset-0 object-cover rounded-[45px]"

@@ -1,10 +1,11 @@
 "use client";
 
-import { motion } from "motion/react";
+import { motion, useScroll, useTransform } from "motion/react";
 import Image from "next/image";
-import { useEffect, useRef } from "react";
+import { RefObject, useEffect, useRef } from "react";
 import gsap from "gsap";
 import { SplitText } from "gsap/all";
+import About from "./about";
 
 interface SplitTextInstance {
     lines: HTMLElement[];
@@ -13,7 +14,7 @@ interface SplitTextInstance {
 
 gsap.registerPlugin(SplitText);
 
-export default function Hero() {
+export default function Hero({ containerRef }: { containerRef: RefObject<HTMLDivElement | null> }) {
     const parentRef = useRef<HTMLDivElement | null>(null);
     const textContainerRef = useRef<HTMLDivElement | null>(null);
     const imageRef1 = useRef<HTMLImageElement | null>(null);
@@ -110,11 +111,9 @@ export default function Hero() {
         }) as unknown as SplitTextInstance;
 
         const lines = split.lines;
-
-        // Wrap each line in a mask container
         lines.forEach(line => {
             const wrapper = document.createElement('div');
-            wrapper.style.overflow = 'hidden';
+            wrapper.style.overflowY = 'hidden';
             wrapper.style.lineHeight = '0.85';
             line.parentNode?.insertBefore(wrapper, line);
             wrapper.appendChild(line);
@@ -136,19 +135,29 @@ export default function Hero() {
             split.revert();
         };
     }, []);
+
+    const { scrollYProgress } = useScroll({
+        target: containerRef,
+        offset: ["start start", "end end"]
+    });
+
+    const x1 = useTransform(scrollYProgress, [0, 1], ["0%", "-500%"])
+    const x2 = useTransform(scrollYProgress, [0, 1], ["0%", "500%"])
     
     return (
-        <div ref={parentRef} className="h-fit relative">
-            <div className="h-fit">
+        <div ref={parentRef} className="relative w-full flex flex-col items-center">
+            <div className="h-fit sticky top-0">
                 <div className="mt-5">
                     <Image alt="logo" width={192} height={24} src={"/logo.svg"} />
                 </div>
                 <div 
                     ref={textContainerRef}
-                    className="-translate-x-3 mt-30 relative tracking-tighter font-pp-mori uppercase font-normal text-[138px] w-fit h-fit overflow-visible leading-[0.85]"
+                    className="mt-30 relative tracking-tighter font-pp-mori uppercase font-normal text-[138px] w-fit h-fit overflow-y-hidden leading-[0.85]"
                 >
-                    <div className="flex items-center justify-start inset-0 overflow-hidden">
-                        <motion.div className="leading-30 z-2 mr-45 relative inline-block will-change-transform">
+                    <div className="flex items-center justify-start inset-0 overflow-y-hidden">
+                        <motion.div
+                            style={{x: x1}} 
+                            className="leading-30 z-2 mr-45 relative inline-block will-change-transform">
                             launch
                         </motion.div>
                         <div style={{ perspective: '1000px' }} className="w-[171px] h-[96px] absolute left-[40%]">
@@ -162,15 +171,19 @@ export default function Hero() {
                                 <span className="text-base text-white tracking-wide absolute inset-0 flex items-center justify-center">play</span>
                             </div>
                         </div>
-                        <motion.div className="leading-30 z-2 will-change-transform">
+                        <motion.div
+                            style={{x: x2}} 
+                            className="leading-30 z-2 will-change-transform">
                             digital
                         </motion.div>
                     </div>
                     <div className="flex justify-start inset-0">
-                        <motion.div className="leading-30 z-2 mr-20 will-change-transform">
+                        <motion.div
+                            style={{x: x1}} 
+                            className="leading-30 z-2 mr-20 will-change-transform">
                             experien­ces
                         </motion.div>
-                        <div style={{ perspective: '1000px' }} className="absolute w-[220px] h-[211px] left-[60%]">
+                        <div style={{ perspective: '1000px' }} className="absolute w-[220px] h-[211px] -top-[40%] left-[60%]">
                             <Image alt="logo"
                                 ref={imageRef2} 
                                 className="z-0 h-auto hover:opacity-80 transition-opacity duration-400 object-cover"
@@ -178,12 +191,16 @@ export default function Hero() {
                                 src={"https://cdn.prod.website-files.com/658031e408a50a76013e5183/68bcc2070b51d06488307d3a_683cf5a69ff407866c3051b9e5aded55_iPhone_15_Pro_Max_10-1-copy-main2-1465x980-p-1080.jpg"} 
                             />
                         </div>
-                        <motion.div className="leading-30 z-2 will-change-transform">
+                        <motion.div 
+                            style={{x: x2}} 
+                            className="leading-30 z-2 will-change-transform">
                             that
                         </motion.div>
                     </div>
-                    <div className="flex justify-start inset-0 overflow-hidden">
-                        <motion.div className="leading-30 z-2 mr-20 will-change-transform">
+                    <div className="flex justify-start inset-0 overflow-y-hidden">
+                        <motion.div
+                            style={{x: x1}} 
+                            className="leading-30 z-2 mr-20 will-change-transform">
                             shape
                         </motion.div>
                         <div style={{ perspective: '1000px' }} className="absolute w-[204px] h-[155px] left-[27%]">
@@ -195,12 +212,15 @@ export default function Hero() {
                                 src={"https://cdn.prod.website-files.com/658031e408a50a76013e5183/68840d2477f6c7d14380dd64_rccl-watch2-p-800.jpg"} 
                             />
                         </div>
-                        <motion.div className="leading-30 z-2 tracking-tighter will-change-transform">
+                        <motion.div
+                            style={{x: x2}} 
+                            className="leading-30 z-2 tracking-tighter will-change-transform">
                             the future.
                         </motion.div>
                     </div>
                 </div>
             </div>
+            <About />
         </div>
     )
 }
