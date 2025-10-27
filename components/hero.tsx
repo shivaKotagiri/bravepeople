@@ -146,21 +146,21 @@ export default function Hero({ containerRef }: { containerRef: RefObject<HTMLDiv
     
     return (
         <div ref={parentRef} className="relative w-full flex flex-col items-center">
-            <div className="h-fit sticky top-0">
-                <div className="mt-5">
-                    <Image alt="logo" width={192} height={24} src={"/logo.svg"} />
+            <div className="h-fit sticky top-0 font-family-pp-mori w-full px-[3%] lg:px-[8%]">
+                <div className="mt-5 uppercase text-[1.1rem] font-matrice font-semibold">
+                    bravepeople®
                 </div>
                 <div 
                     ref={textContainerRef}
-                    className="mt-30 relative tracking-tighter font-pp-mori uppercase font-normal text-[138px] w-fit h-fit overflow-y-hidden leading-[0.85]"
+                    className="mt-30 relative -translate-x-3 tracking-tighter font-pp-mori uppercase font-normal text-[138px] w-fit h-fit overflow-y-hidden leading-[0.85]"
                 >
                     <div className="flex items-center justify-start inset-0 overflow-y-hidden">
                         <motion.div
                             style={{x: x1}} 
-                            className="leading-30 z-2 mr-45 relative inline-block will-change-transform">
+                            className="leading-30 z-2 mr-50 relative inline-block will-change-transform">
                             launch
                         </motion.div>
-                        <div style={{ perspective: '1000px' }} className="w-[171px] h-[96px] absolute left-[40%]">
+                        <div style={{ perspective: '1000px' }} className="w-[171px] h-[96px] absolute left-[43%]">
                             <div ref={imageRef1} className="relative w-full h-full">
                                 <Image 
                                     alt="logo" 
@@ -180,10 +180,10 @@ export default function Hero({ containerRef }: { containerRef: RefObject<HTMLDiv
                     <div className="flex justify-start inset-0">
                         <motion.div
                             style={{x: x1}} 
-                            className="leading-30 z-2 mr-20 will-change-transform">
+                            className="leading-30 z-2 mr-30 will-change-transform">
                             experien­ces
                         </motion.div>
-                        <div style={{ perspective: '1000px' }} className="absolute w-[220px] h-[211px] -top-[40%] left-[60%]">
+                        <div style={{ perspective: '1000px' }} className="absolute w-[220px] h-[211px] -top-[40%] left-[63%]">
                             <Image alt="logo"
                                 ref={imageRef2} 
                                 className="z-0 h-auto hover:opacity-80 transition-opacity duration-400 object-cover"
