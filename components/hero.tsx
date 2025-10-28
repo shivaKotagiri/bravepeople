@@ -4,7 +4,7 @@ import { motion, useScroll, useTransform } from "motion/react";
 import Image from "next/image";
 import { RefObject, useEffect, useRef } from "react";
 import gsap from "gsap";
-import { SplitText } from "gsap/all";
+import { SplitText } from "gsap/SplitText";
 import About from "./about";
 
 interface SplitTextInstance {
@@ -147,7 +147,7 @@ export default function Hero({ containerRef }: { containerRef: RefObject<HTMLDiv
     return (
         <div ref={parentRef} className="relative w-full flex flex-col items-center">
             <div className="h-fit sticky top-0 font-family-pp-mori w-full px-[3%] lg:px-[8%]">
-                <div className="mt-5 uppercase text-[1.1rem] font-matrice font-bold">
+                <div className="mt-5 uppercase text-[1.1rem] font-matrice font- bold">
                     bravepeople®
                 </div>
                 <div 
