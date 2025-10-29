@@ -3,6 +3,7 @@ import Hero from "@/components/hero";
 import BentoGrid from "@/components/bento-grid";
 import Carousel from "@/components/carounsel";
 import { useRef } from "react";
+import Testimonial from "@/components/ui/testimonial";
 
 export default function Home() {
   const containerRef = useRef<HTMLDivElement | null>(null);
@@ -11,6 +12,7 @@ export default function Home() {
       <Hero containerRef={containerRef} />
       <BentoGrid />
       <Carousel />
+      <Testimonial />
     </div>
   );
 }
