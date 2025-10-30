@@ -160,7 +160,7 @@ export default function Hero({ containerRef }: { containerRef: RefObject<HTMLDiv
                 </div>
                 <div 
                     ref={textContainerRef}
-                    className="mt-12 md:mt-20 lg:mt-30 relative tracking-tighter font-pp-mori uppercase font-normal text-[clamp(2.5rem,8vw,8.625rem)] w-full h-fit leading-[0.85%]"
+                    className="mt-12 md:mt-20 lg:mt-30 relative -translate-x-3 tracking-tighter font-pp-mori uppercase font-normal text-[clamp(2.5rem,8vw,8.625rem)] w-full h-fit leading-[0.85%]"
                 >
                     <div className="flex flex-col sm:flex-row relative">
                         <motion.div
