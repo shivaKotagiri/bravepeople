@@ -108,7 +108,8 @@ export default function Hero({ containerRef }: { containerRef: RefObject<HTMLDiv
         textElements.forEach((element) => {
             const split = new SplitText(element, {
                 type: "lines",
-                linesClass: "split-line"
+                linesClass: "split-line",
+                mask: "lines"
             }) as unknown as SplitTextInstance;
 
             const lines = split.lines;
@@ -130,7 +131,7 @@ export default function Hero({ containerRef }: { containerRef: RefObject<HTMLDiv
                 yPercent: 0,
                 duration: 1.3,
                 ease: "power4.out",
-                stagger: 0.25
+                stagger: 0.25,
             });
         });
 
