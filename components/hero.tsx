@@ -196,7 +196,7 @@ export default function Hero({ containerRef }: { containerRef: RefObject<HTMLDiv
                             <div style={{ perspective: '1000px' }} className="w-[90px] h-[86px] xs:w-[100px] xs:h-[96px] sm:w-[120px] sm:h-[115px] md:w-[145px] md:h-[139px] lg:w-[170px] lg:h-[163px] xl:w-[195px] xl:h-[187px] 2xl:w-[220px] 2xl:h-[211px] relative sm:absolute sm:left-0 2xl:left-[-15%]">
                                 <Image alt="logo"
                                     ref={imageRef2} 
-                                    className="z-0 h-auto hover:opacity-80 transition-opacity duration-400 object-cover rounded-md sm:rounded-lg"
+                                    className="z-0 h-auto hover:opacity-80 transition-opacity duration-400 object-cover"
                                     fill
                                     src={"https://cdn.prod.website-files.com/658031e408a50a76013e5183/68bcc2070b51d06488307d3a_683cf5a69ff407866c3051b9e5aded55_iPhone_15_Pro_Max_10-1-copy-main2-1465x980-p-1080.jpg"} 
                                 />
@@ -219,7 +219,7 @@ export default function Hero({ containerRef }: { containerRef: RefObject<HTMLDiv
                             <Image 
                                 ref={imageRef3}
                                 alt="logo" 
-                                className="z-0 hover:opacity-85 transition-opacity duration-400 object-cover rounded-md sm:rounded-lg"
+                                className="z-0 hover:opacity-85 transition-opacity duration-400 object-cover"
                                 fill
                                 src={"https://cdn.prod.website-files.com/658031e408a50a76013e5183/68840d2477f6c7d14380dd64_rccl-watch2-p-800.jpg"} 
                             />
