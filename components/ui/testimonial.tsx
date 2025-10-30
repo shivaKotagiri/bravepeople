@@ -5,7 +5,7 @@ import { useRef } from "react";
 export default function Testimonial() {
     const textRef = useRef<HTMLDivElement | null>(null);
     return (
-        <div className="w-full lg:my-35 mx-auto h-fit px-[3%] lg:px-[8%]">
+        <div className="w-full lg:my-35 mx-auto h-fit">
             <div ref={textRef} className="mb-15 mx-auto w-full leading-none text-[#4D4D4D] text-[3.5rem] lg:text-[5rem]">
                 &quot;The Brave People team has done a masterful job at capturing the essence of FCF and projecting it through our site, mobile apps and branding elements. Always game for the next challenge, they continue to work closely with our product, tech and marketing groups under aggressive timelines to deliver creative which consistently exceeds expectations and delights our fans. Simply put, Brave People crushes it.&quot;
             </div>

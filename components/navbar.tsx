@@ -80,7 +80,7 @@ export default function Navbar() {
     }, [hover]);
 
     return (
-        <nav className="fixed z-20 w-fit shadow-lg bg-white uppercase text-sm font-medium p-[0.25rem] rounded-4xl flex flex-row gap-1">
+        <nav className="fixed z-20 w-fit shadow-[0_0_200px_50px_rgba(0,0,0,0.15)] bg-white uppercase text-sm font-medium p-[0.25rem] rounded-4xl flex flex-row gap-1">
             <div ref={navRef} className="flex justify-center items-center">
                 <Image src="/nav-logo.svg" width={16} height={16} alt="Logo" className="size-9" />
             </div>
@@ -91,7 +91,7 @@ export default function Navbar() {
             <div 
                 onMouseEnter={() => setHover(true)} 
                 onMouseLeave={() => setHover(false)}
-                className="hover:bg-white overflow-hidden relative transition-colors duration-300 hover:text-black border cursor-pointer py-3 px-[22px] rounded-4xl bg-black text-white flex justify-center items-center w-[9.3rem]">
+                className="hover:bg-white overflow-hidden relative transition-colors duration-300 hover:text-black border cursor-pointer py-3 px-[50px] rounded-4xl bg-black text-[14px] text-white flex justify-center tracking-tighter items-center w-[9.2rem]">
                 <div ref={splitRef} className="absolute inset-0 flex justify-center items-center z-0">work&nbsp;with&nbsp;us</div>
                 <div ref={textRef} className="absolute inset-0 flex justify-center items-center z-10">work&nbsp;with&nbsp;us</div>
             </div>
