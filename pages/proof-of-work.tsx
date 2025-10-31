@@ -27,7 +27,6 @@ export default function AnimatedSection() {
           trigger: el,
           start: "25% top",
           end: "bottom 20%",
-          markers: true,
           toggleActions: "play reverse play reverse",
         },
         duration: 0.35,
