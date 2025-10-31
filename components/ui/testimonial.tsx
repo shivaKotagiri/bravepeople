@@ -28,10 +28,9 @@ export default function Testimonial() {
 
     const scrollTriggerConfig: any = {
       trigger: text,
-      start: "top 80%",
-      end: "bottom 20%",
+      start: "top 50%",
+      end: "bottom 50%",
       scrub: 1,
-      markers: true,
       // onEnter: () => console.log("ScrollTrigger entered"),
       // onLeave: () => console.log("ScrollTrigger left"),
       // onUpdate: (self: any) => console.log("Progress:", self.progress),

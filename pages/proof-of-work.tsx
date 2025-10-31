@@ -6,6 +6,7 @@ import BentoGrid from "@/components/bento-grid";
 import ChallengesSection from "@/components/challenges";
 import Carousel from "@/components/carounsel";
 import Testimonial from "@/components/ui/testimonial";
+import Part3 from "./part3";
 
 
 gsap.registerPlugin(ScrollTrigger);
@@ -28,7 +29,6 @@ export default function AnimatedSection() {
           start: "20% top",
           end: "bottom",
           toggleActions: "play reverse play reverse",
-          markers: true
         },
         duration: 0.35,
       }
@@ -36,11 +36,14 @@ export default function AnimatedSection() {
   }, []);
 
   return (
-    <div ref={sectionRef} className="w-full px-[2.5%] 2xl:px-[8%]">
-      <BentoGrid />
-      <ChallengesSection />
-      <Carousel />
-      <Testimonial />
+    <div ref={sectionRef} className="w-full flex flex-col">
+      <div className="w-full px-[3%] 2xl:px-[8%]">
+        <BentoGrid />
+        <ChallengesSection />
+        <Carousel />
+        <Testimonial />
+      </div>
+      <Part3 />
     </div>
   );
 }

@@ -11,7 +11,6 @@ export default function Home() {
       <containerContext.Provider value={containerRef}>
         <Landing />
         <ProofOfWork />
-        <Headline />
       </containerContext.Provider>
     </div>
   );
