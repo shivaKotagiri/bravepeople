@@ -31,9 +31,10 @@ export default function TextReveal({ children, onScrollAnimation = false, delay 
         const lines = split.lines;
 
         gsap.set(lines, {
-            yPercent: 200,
+            yPercent: 500,
             opacity: 0,
-            overflow: "hidden"
+            overflow: "hidden",
+            display: "block",
         });
 
         const animationProps = {
@@ -42,7 +43,7 @@ export default function TextReveal({ children, onScrollAnimation = false, delay 
             ease: "power4.out",
             opacity: 1,
             stagger: 0.1,
-            delay
+            delay,
         }
 
         if(onScrollAnimation) {

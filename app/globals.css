@@ -4,6 +4,10 @@
 @import "tailwindcss";
 
 /* Font face declarations */
+
+body {
+  font-family: PP Neue Montreal, sans-serif;
+}
 @font-face {
   font-family: 'PP Mori';
   src: url("/fonts/pp_mori.woff2") format("woff2");
@@ -59,7 +63,7 @@ html.lenis, html.lenis body {
   height: auto;
 }
 .lenis.lenis-smooth {
-  scroll-behavior: auto !important; /* Fixed spacing */
+  scroll-behavior: auto !important; 
 }
 .lenis.lenis-smooth [data-lenis-prevent] {
   overscroll-behavior: contain;
@@ -69,4 +73,11 @@ html.lenis, html.lenis body {
 }
 .lenis.lenis-smooth iframe {
   pointer-events: none;
+}
+
+.split-line {
+  display: block !important;
+  line-height: inherit !important;
+  margin: 0 !important;
+  padding: 0 !important;
 }

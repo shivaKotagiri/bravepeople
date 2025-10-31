@@ -68,7 +68,7 @@ export default function Testimonial() {
   }, [containerRef]);
 
   return (
-    <div className="w-full lg:my-35 mx-auto h-fit py-20">
+    <div className="w-full mx-auto h-fit py-20">
       <div
         ref={textRef}
         className="mb-15 mx-auto w-full leading-none text-white text-[3.5rem] lg:text-[5rem]"

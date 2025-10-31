@@ -4,6 +4,7 @@
 import { useEffect, useRef, useState } from "react"
 import gsap from "gsap"
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger"
+import TextReveal from "./ui/text-reveal"
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -86,12 +87,14 @@ export default function ChallengesSection() {
         <div className="w-full max-w-5xl leading-none pb-2.5">
           <div className="relative z-[2] w-full">
             <div className="mb-16 w-full font-family-pp-mori">
-              <h2 className="text-[6rem] font-[400] mb-6 text-[#f9f9f9] leading-none uppercase">
-                Your biggest challeng &nbsp;es don&apos;t scare us
-              </h2>
-              <p className="text-2xl text-white leading-relaxed max-w-2xl">
-                Big or small, 5 employees or 5,000, most organizations face the same challenges at different scales:
-              </p>
+              <TextReveal onScrollAnimation={true} delay={0}>
+                <h2 className="text-[6rem] font-[400] mb-6 text-[#f9f9f9] leading-20 overflow-hidden uppercase">
+                  Your biggest challeng &nbsp;es don&apos;t scare us
+                </h2>
+                <p className="text-2xl text-white leading-relaxed max-w-2xl">
+                  Big or small, 5 employees or 5,000, most organizations face the same challenges at different scales:
+                </p>
+              </TextReveal>
             </div>
           </div>
           <div

@@ -25,9 +25,10 @@ export default function AnimatedSection() {
         color: "white",
         scrollTrigger: {
           trigger: el,
-          start: "25% top",
-          end: "bottom 20%",
+          start: "20% top",
+          end: "bottom",
           toggleActions: "play reverse play reverse",
+          markers: true
         },
         duration: 0.35,
       }
