@@ -7,6 +7,7 @@ import gsap from "gsap";
 import Testimonial from "@/components/ui/testimonial";
 import TrustedBy from "@/components/trustedby";
 import ProjectPath from "@/components/project-path";
+import Footer from "@/components/footer";
 
 gsap.registerPlugin(ScrollTrigger);
 export default function Part3() {

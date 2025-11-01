@@ -6,6 +6,7 @@ import BentoGrid from "@/components/bento-grid";
 import ChallengesSection from "@/components/challenges";
 import Carousel from "@/components/carounsel";
 import Part3 from "./part3";
+import Footer from "@/components/footer";
 
 
 gsap.registerPlugin(ScrollTrigger);
@@ -42,6 +43,7 @@ export default function AnimatedSection() {
         <Carousel />
       </div>
       <Part3 />
+      <Footer />
     </div>
   );
 }
