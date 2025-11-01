@@ -4,7 +4,7 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import Image from "next/image";
-import { lists } from "@/utils/lists";
+import { lists } from "@/utils/data/lists";
 
 export default function Carousel() {
     const [currentIndex, setCurrentIndex] = useState(0);

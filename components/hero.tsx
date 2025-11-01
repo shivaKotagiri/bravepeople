@@ -41,22 +41,22 @@ export default function Hero({ containerRef }: { containerRef: RefObject<HTMLDiv
                 const moveY = (e.clientY - sectionCenterY) / (sectionRect.height / 2);
 
                 gsap.to(image1, {
-                    x: moveX * 12,
-                    y: moveY * 12,
+                    x: moveX * 15,
+                    y: moveY * 15,
                     duration: 0.8,
                     ease: "power4.out"
                 })
 
                 gsap.to(image2, {
-                    x: moveX * 12,
-                    y: moveY * 12,
+                    x: moveX * 15,
+                    y: moveY * 15,
                     duration: 0.8,
                     ease: "power4.out"
                 })
 
                 gsap.to(image3, {
-                    x: moveX * 12,
-                    y: moveY * 12,
+                    x: moveX * 15,
+                    y: moveY * 15,
                     duration: 0.8,
                     ease: "power4.out"
                 })

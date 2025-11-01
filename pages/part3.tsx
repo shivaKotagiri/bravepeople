@@ -5,6 +5,7 @@ import { useEffect, useRef } from "react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import gsap from "gsap";
 import Testimonial from "@/components/ui/testimonial";
+import TrustedBy from "@/components/trustedby";
 
 gsap.registerPlugin(ScrollTrigger);
 export default function Part3() {
@@ -32,10 +33,12 @@ export default function Part3() {
         );
     }, []);
     return (
-        <div className="w-full flex flex-col justify-center px-[3%] 2xl:px-[8%]" ref={sectionRef}>
-            <Testimonial />
-            <Headline />
-            <div className="h-[100vh] w-full"></div>
+        <div className="flex flex-col w-full justify-center" ref={sectionRef}>
+            <div className="w-full flex flex-col justify-center px-[3%] 2xl:px-[8%]">
+                <Testimonial />
+                <Headline />
+            </div>
+            <TrustedBy />
         </div>
     )
 }
