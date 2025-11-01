@@ -42,10 +42,11 @@ export default function ChoosePath({ title, link, text, para}: Props) {
                                 duration: 0.3
                             }
                         }}
-                        className="border border-white overflow-hidden rounded-full relative cursor-pointer mt-10 h-[3.75rem] w-[3.75rem] flex justify-between items-center text-black bg-white hover:text-white hover:bg-transparent transition-colors duration-500 px-5">
+                        className={`border border-white overflow-hidden rounded-full relative cursor-pointer mt-10 h-[3.75rem] w-[3.75rem] flex ${hover ? "justify-between": "justify-center"} items-center text-black bg-white hover:text-white hover:bg-transparent transition-colors duration-500 ${hover ? "px-5": ""}`}>
                         {hover && <motion.div
-                            initial={{display: "hidden", opacity: 0, y: "200%"}}
-                            animate={{ display: "block", y: "0%", opacity: 1 }}
+                            className="overflow-hidden h-fit"
+                            initial={{display: "hidden", opacity: 0, y: "200%", overflow: "hidden" }}
+                            animate={{ display: "block", y: "0%", opacity: 1, overflow: "hidden" }}
                             transition={{
                                 y: {
                                     delay: 0.2,
