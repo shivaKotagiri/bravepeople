@@ -5,7 +5,6 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import BentoGrid from "@/components/bento-grid";
 import ChallengesSection from "@/components/challenges";
 import Carousel from "@/components/carounsel";
-import Testimonial from "@/components/ui/testimonial";
 import Part3 from "./part3";
 
 
@@ -26,7 +25,7 @@ export default function AnimatedSection() {
         color: "white",
         scrollTrigger: {
           trigger: el,
-          start: "20% top",
+          start: "10% top",
           end: "bottom",
           toggleActions: "play reverse play reverse",
         },
@@ -41,7 +40,6 @@ export default function AnimatedSection() {
         <BentoGrid />
         <ChallengesSection />
         <Carousel />
-        <Testimonial />
       </div>
       <Part3 />
     </div>

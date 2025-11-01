@@ -1,9 +1,6 @@
-/* If you want to use CDN fonts (easier option) */
 @import url('https://fonts.cdnfonts.com/css/pp-neue-montreal');
 
 @import "tailwindcss";
-
-/* Font face declarations */
 
 body {
   font-family: PP Neue Montreal, sans-serif;
@@ -39,7 +36,6 @@ body {
   --font-family-chronosfer: 'Chronosfer Expanded';
 }
 
-/* Custom font utilities for Tailwind v4 */
 @layer utilities {
   .font-pp-mori {
     font-family: var(--font-family-pp-mori);
@@ -73,11 +69,4 @@ html.lenis, html.lenis body {
 }
 .lenis.lenis-smooth iframe {
   pointer-events: none;
-}
-
-.split-line {
-  display: block !important;
-  line-height: inherit !important;
-  margin: 0 !important;
-  padding: 0 !important;
 }

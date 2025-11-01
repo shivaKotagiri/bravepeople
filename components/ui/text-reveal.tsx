@@ -34,12 +34,14 @@ export default function TextReveal({ children, onScrollAnimation = false, delay 
             yPercent: 500,
             opacity: 0,
             overflow: "hidden",
-            display: "block",
+            margin: 0,
+            padding: 0,
+            lineHeight: "0.75",
         });
 
         const animationProps = {
             yPercent: 0,
-            duration: 1.5,
+            duration: 1,
             ease: "power4.out",
             opacity: 1,
             stagger: 0.1,
@@ -66,7 +68,7 @@ export default function TextReveal({ children, onScrollAnimation = false, delay 
         };
     }, { dependencies: [onScrollAnimation, delay, children]})
     return (
-        <div ref={containerRef} className="overflow-hidden">
+        <div ref={containerRef} className="overflow-hidden leading-[75%] flex flex-col gap-0">
             { children }
         </div>
     )
