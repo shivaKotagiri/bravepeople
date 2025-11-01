@@ -9,6 +9,11 @@ export default function Footer() {
     const handleInput = (e: ChangeEvent<HTMLInputElement>) => {
         setMail(e.target.value);
     }
+    function handleBlurEvent() {
+        if(mail.length === 0) {
+            setMail("Your email here");
+        }
+    }
     return (
         <div className="bg-black text-white pt-20 px-[3%] 2xl:px-[8%]">
             <div className="py-15"><Logo /></div>
@@ -22,6 +27,7 @@ export default function Footer() {
                             className="focus:outline-none bg-white p-3 text-gray-500 font-[500]"
                             onChange={handleInput} 
                             onFocus={() => setMail("")} 
+                            onBlur={handleBlurEvent}
                             type="text" 
                             value={mail}
                         />
