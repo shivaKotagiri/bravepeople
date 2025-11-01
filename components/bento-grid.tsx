@@ -1,12 +1,43 @@
 "use client";
 import Image from "next/image";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/all";
+import { useRef } from "react";
+import { useGSAP } from "@gsap/react";
 
+gsap.registerPlugin(ScrollTrigger);
 export default function BentoGrid() {
+    const imageRef1 = useRef<HTMLImageElement | null>(null);
+    const imageRef2 = useRef<HTMLImageElement | null>(null);
+    const imageRef3 = useRef<HTMLImageElement | null>(null);
+    const imageRef4 = useRef<HTMLImageElement | null>(null);
+    const sectionRef = useRef<HTMLDivElement | null>(null);
+
+    useGSAP(() => {
+        const images = [imageRef1, imageRef2, imageRef3, imageRef4];
+        images.forEach((imgRef) => {
+            const image = imgRef.current;
+            gsap.set(image, { filter: "brightness(0)", scale: 1.25 });
+            gsap.to(image, {
+                filter: "brightness(1)",
+                scale: 1.1,
+                duration: 1,
+                ease: "power3.out",
+                scrollTrigger: {
+                    trigger: image,
+                    start: "top 75%", 
+                    once: true,
+                    markers: false,
+                },
+            });
+        })
+    }, { scope: sectionRef })
     return (
-        <div className="w-full grid grid-cols-7 mt-20 gap-2">
+        <div ref={sectionRef} className="w-full grid grid-cols-7 mt-20 gap-2">
             <div className="col-span-3 w-full h-[780px] relative overflow-hidden cursor-pointer rounded-[45px]">
                 <Image 
-                    className="w-full hover:scale-115 transition-transform duration-300 scale-110 h-full absolute inset-0 object-cover rounded-[45px]"
+                    ref={imageRef1}
+                    className="w-full h-full absolute inset-0 object-cover rounded-[45px]"
                     width={804}
                     height={800} 
                     alt="Image1" 
@@ -18,7 +49,8 @@ export default function BentoGrid() {
             </div>
             <div className="relative w-full h-[780px] overflow-hidden col-span-2 cursor-pointer rounded-[45px]">
                 <Image 
-                    className="w-full h-full scale-110 hover:scale-115 trnasition-transform duration-300 absolute inset-0 object-cover rounded-[45px]" 
+                    ref={imageRef2}
+                    className="w-full h-full absolute inset-0 object-cover rounded-[45px]" 
                     width={409}
                     height={800} 
                     alt="Image2" 
@@ -34,7 +66,8 @@ export default function BentoGrid() {
             </div>
             <div className="relative w-full h-[780px] overflow-hidden col-span-2 cursor-pointer rounded-[45px]">
                 <Image 
-                    className="w-full h-full scale-110 hover:scale-115 trnasition-transform duration-300 absolute inset-0 object-cover rounded-[45px]" 
+                    ref={imageRef3}
+                    className="w-full h-full absolute inset-0 object-cover rounded-[45px]" 
                     width={409}
                     height={800} 
                     alt="Image2" 
@@ -44,7 +77,8 @@ export default function BentoGrid() {
             </div>
             <div className="relative w-full h-[780px] overflow-hidden col-span-2 cursor-pointer rounded-[45px]">
                 <Image 
-                    className="w-full h-full scale-110 hover:scale-115 trnasition-transform duration-300 absolute inset-0 object-cover rounded-[45px]" 
+                    ref={imageRef4}
+                    className="w-full h-full absolute inset-0 object-cover rounded-[45px]" 
                     width={409}
                     height={800} 
                     alt="Image2" 
