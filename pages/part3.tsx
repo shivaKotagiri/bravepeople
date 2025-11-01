@@ -6,6 +6,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import gsap from "gsap";
 import Testimonial from "@/components/ui/testimonial";
 import TrustedBy from "@/components/trustedby";
+import ProjectPath from "@/components/project-path";
 
 gsap.registerPlugin(ScrollTrigger);
 export default function Part3() {
@@ -39,6 +40,9 @@ export default function Part3() {
                 <Headline />
             </div>
             <TrustedBy />
+            <div className="w-full flex flex-col justify-center px-[3%] 2xl:px-[8%]">
+                <ProjectPath />
+            </div>
         </div>
     )
 }

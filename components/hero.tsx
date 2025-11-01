@@ -154,7 +154,7 @@ export default function Hero({ containerRef }: { containerRef: RefObject<HTMLDiv
     const x2 = useTransform(scrollYProgress, [0, 1], ["0%", "500%"])
     
     return (
-        <div ref={parentRef} className="relative w-full flex flex-col items-center">
+        <div ref={parentRef} className="relative w-full flex flex-col items-center justify-center">
             <div className="h-fit sticky top-0 font-family-pp-mori w-full">
                 <div className="mt-3 hidden lg:block uppercase text-[0.9rem] md:text-[1.1rem] font-matrice font-bold">
                     bravepeople®
