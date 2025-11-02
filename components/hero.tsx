@@ -2,9 +2,10 @@
 
 import { motion, useScroll, useTransform } from "motion/react";
 import Image from "next/image";
-import { RefObject, useEffect, useRef } from "react";
+import { useContext, useEffect, useRef } from "react";
 import gsap from "gsap";
 import { SplitText } from "gsap/SplitText";
+import { containerContext } from "@/utils/context/containerContext";
 
 interface SplitTextInstance {
     lines: HTMLElement[];
@@ -13,12 +14,13 @@ interface SplitTextInstance {
 
 gsap.registerPlugin(SplitText);
 
-export default function Hero({ containerRef }: { containerRef: RefObject<HTMLDivElement | null> }) {
+export default function Hero() {
     const parentRef = useRef<HTMLDivElement | null>(null);
     const textContainerRef = useRef<HTMLDivElement | null>(null);
     const imageRef1 = useRef<HTMLImageElement | null>(null);
     const imageRef2 = useRef<HTMLImageElement | null>(null);
     const imageRef3 = useRef<HTMLImageElement | null>(null);
+    const containerRef = useContext(containerContext);
 
     useEffect(() => {
         const section = containerRef.current;
@@ -103,6 +105,7 @@ export default function Hero({ containerRef }: { containerRef: RefObject<HTMLDiv
 
     useEffect(() => {
         if (!textContainerRef.current) return;
+
         const textElements = textContainerRef.current.querySelectorAll('.animate-text');
         
         textElements.forEach((element) => {
@@ -122,14 +125,12 @@ export default function Hero({ containerRef }: { containerRef: RefObject<HTMLDiv
                 wrapper.appendChild(line);
             });
 
-            gsap.set(lines, {
+            gsap.fromTo(lines, {
                 yPercent: 500,
                 opacity: 1
-            });
-
-            gsap.to(lines, {
+            }, {
                 yPercent: 0,
-                duration: 1.3,
+                duration: 0.5,
                 ease: "power4.out",
                 stagger: 0.25,
             });
