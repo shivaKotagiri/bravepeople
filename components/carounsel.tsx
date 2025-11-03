@@ -26,8 +26,8 @@ export default function Carousel() {
 
     return (
         <div className="mt-30 mb-85 w-full flex justify-center items-center h-full">
-            <div className="bg-black border border-neutral-400 text-white p-10 lg:p-20 rounded-[50px] w-full h-[665px] selection:bg-white selection:text-black">
-                <div className="uppercase mb-[2rem] pr-[5%] text-[80px] lg:text-[100px] font-normal leading-none">
+            <div className="bg-black border border-neutral-400 lg:pt-[10%] text-white p-10 lg:p-18 xl:p-20 lg:rounded-[50px] md:rounded-[30px] rounded-[25px] w-full h-[665px] selection:bg-white selection:text-black">
+                <div className="uppercase mb-[2rem] xl:pr-[5%] text-[3.375rem] md:text-[5rem] lg:text-[6.25rem] font-normal leading-none">
                     Ask yourself — What if you could:
                 </div>
                 <div
@@ -48,7 +48,7 @@ export default function Carousel() {
                                 className="relative max-w-[400px] max-h-[400px] rounded-[40px] lg:max-w-[432px] lg:max-h-[432px] w-full h-full flex justify-center items-center flex-shrink-0"
                             >
                                 <Image
-                                    className="z-5 rounded-[30px] lg:rounded-[40px] max-w-[400px] max-h-[400px] lg:max-w-[432px] lg:max-h-[432px] object-cover brightness-90"
+                                    className="z-5 rounded-[30px] lg:rounded-[40px] max-w-[400px] max-h-[400px] md:w-[472px] md:h-[472px] lg:max-w-[432px] lg:max-h-[432px] object-cover brightness-90"
                                     src={list.img}
                                     width={432}
                                     height={432}
