@@ -70,7 +70,8 @@ export default function Testimonial() {
     <div className="w-full mx-auto h-fit pt-20 pb-[20%]">
       <div
         ref={textRef}
-        className="mb-15 mx-auto w-full leading-none text-white text-[3.5rem] lg:text-[5rem]"
+        style={{ WebkitTextStroke: "0.5px" }}
+        className="mb-15 mx-auto w-full font-[400] md:leading-none leading-tight text-white text-[2rem] md:text-[3.5rem] lg:text-[5rem]"
       >
         &quot;The Brave People team has done a masterful job at capturing the essence
         of FCF and projecting it through our site, mobile apps and branding
