@@ -67,7 +67,7 @@ export default function Testimonial() {
   }, [containerRef]);
 
   return (
-    <div className="w-full mx-auto h-fit pt-20 pb-[20%]">
+    <div className="w-full mx-auto h-fit lg:pt-20 pb-[20%]">
       <div
         ref={textRef}
         style={{ WebkitTextStroke: "0.5px" }}

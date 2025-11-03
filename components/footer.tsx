@@ -17,8 +17,8 @@ export default function Footer() {
     return (
         <div className="bg-black text-white pt-20 px-[3%] 2xl:px-[8%]">
             <div className="py-15"><Logo /></div>
-            <div className="flex justify-between">
-                <div className="flex flex-col">
+            <div className="flex lg:flex-row flex-col lg:justify-between items-start">
+                <div className="flex flex-col w-full lg:max-w-[65%]">
                     <div className="max-w-lg selection:bg-white selection:text-black text-4xl font-[500] mb-10">
                         Get valuable strategy, culture, and brand insights straight to your inbox.
                     </div> 
@@ -37,7 +37,7 @@ export default function Footer() {
                         By signing up to receive emails from Brave People, you agree to our Privacy Policy. We treat your info responsibly. Unsubscribe anytime.
                     </div>
                 </div>
-                <div className="flex justify-between gap-25">
+                <div className="flex justify-between w-full sm:max-w-[75%] lg:max-w-[35%] items-start">
                     <FooterLinks name="Company" lists={company} />
                     <FooterLinks name="Discover" lists={discover} />
                     <FooterLinks name="Learn" lists={learn} />

@@ -25,7 +25,7 @@ export default function Carousel() {
     const xOffset = -currentIndex * cardWidth;
 
     return (
-        <div className="mt-30 mb-85 w-full flex justify-center items-center h-full">
+        <div className="mt-30 mb-45 md:mb-85 w-full flex justify-center items-center h-full">
             <div className="bg-black border border-neutral-400 lg:pt-[10%] text-white p-10 lg:p-18 xl:p-20 lg:rounded-[50px] md:rounded-[30px] rounded-[25px] w-full h-[665px] selection:bg-white selection:text-black">
                 <div className="uppercase mb-[2rem] xl:pr-[5%] text-[3.375rem] md:text-[5rem] lg:text-[6.25rem] font-normal leading-none">
                     Ask yourself — What if you could:
@@ -72,7 +72,7 @@ export default function Carousel() {
                                     : "hover:scale-110 opacity-100"
                             }`}
                         >
-                            <ArrowLeft className="stroke-[0.8]" size={70} />
+                            <ArrowLeft className="stroke-[0.8] md:size-15 size-13" />
                         </button>
 
                         <button
@@ -84,7 +84,7 @@ export default function Carousel() {
                                     : "hover:scale-110 opacity-100"
                             }`}
                         >
-                            <ArrowRight className="stroke-[0.8]" size={70} />
+                            <ArrowRight className="stroke-[0.8] md:size-15 size-13" />
                         </button>
                     </div>
                 </div>
