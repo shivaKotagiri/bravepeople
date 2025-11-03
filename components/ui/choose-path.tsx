@@ -17,7 +17,7 @@ export default function ChoosePath({ title, link, text, para}: Props) {
         <div
             onMouseEnter={() => setHover(true)}
             onMouseLeave={() => setHover(false)}
-            className="relative w-full h-[780px] border cursor-pointer hover:border-transparent border-neutral-400 rounded-[40px] text-black hover:text-white">
+            className="relative w-full md:h-[780px] h-[492px] border cursor-pointer hover:border-transparent border-neutral-400 rounded-[40px] text-black hover:text-white">
             <Image 
                 className={`absolute inset-0 rounded-[40px] transition-opacity duration-500 ${hover ? "opacity-100": "opacity-0"}`}
                 alt="image1" 
@@ -25,9 +25,9 @@ export default function ChoosePath({ title, link, text, para}: Props) {
                 style={{ objectFit: 'cover' }}
                 src={link} 
             />
-            <div className="absolute inset-0 p-15 flex flex-col justify-between items-start">
+            <div className="absolute inset-0 lg:p-15 p-[5%] flex flex-col justify-between items-start">
                 <div className="flex flex-col">
-                    <div className="text-6xl font-[500] mt-[30%]">{ title }</div>
+                    <div className="md:text-6xl text-[2.75rem] font-[500] mt-5 lg:mt-[30%]">{ title }</div>
                     <div className="px-4 py-1 border w-fit rounded-2xl font-[500] mt-5">{ text }</div>
                 </div>
                 <div className="flex flex-col">
