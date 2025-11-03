@@ -1,11 +1,12 @@
 "use client";
 import ChoosePath from "./ui/choose-path";
+
 export default function ProjectPath() {
     return (
         <div className="flex flex-col w-full mb-40">
             <div className="uppercase text-8xl max-w-4xl font-family-pp-mori">choose your project path</div>
             <div className="leading-relaxed text-2xl font-[500] max-w-lg mt-5">Going from 0-1 or breaking into your next stage of growth? We specialize in all of the above.</div>
-            <div className="grid md:grid-cols-2 grid-cols-1 mt-25">
+            <div className="grid md:grid-cols-2 grid-cols-1 gap-8 mt-25">
                 <ChoosePath 
                     title="Build a Website" 
                     text="Fixed Scope" 

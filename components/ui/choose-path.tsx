@@ -17,12 +17,12 @@ export default function ChoosePath({ title, link, text, para}: Props) {
         <div
             onMouseEnter={() => setHover(true)}
             onMouseLeave={() => setHover(false)}
-            className="col-span-1 relative w-[710px] h-[780px] border cursor-pointer hover:border-transparent border-neutral-400 rounded-[40px] text-black hover:text-white">
+            className="relative w-full h-[780px] border cursor-pointer hover:border-transparent border-neutral-400 rounded-[40px] text-black hover:text-white">
             <Image 
-                className={`absolute inset-0 w-[711px] h-[780px] transition-opacity duration-500 ${hover ? "opacity-100": "opacity-0"}`}
+                className={`absolute inset-0 rounded-[40px] transition-opacity duration-500 ${hover ? "opacity-100": "opacity-0"}`}
                 alt="image1" 
-                width={711} 
-                height={780} 
+                fill
+                style={{ objectFit: 'cover' }}
                 src={link} 
             />
             <div className="absolute inset-0 p-15 flex flex-col justify-between items-start">
