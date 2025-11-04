@@ -6,8 +6,8 @@ export default function About() {
     const ref2 = useRef<HTMLDivElement | null>(null);
     return (
         <div ref={sectionRef} className="flex mb-10 items-center w-full">
-            <div className="mt-25 w-full flex lg:flex-row justify-between">
-                <div ref={ref1} className="bg-black w-[254px] h-[33px] lg:min-w-[384px] lg:min-h-[104px] leading-none border text-start uppercase text-[17px] tracking-tighter border-black text-white hover:bg-white hover:text-black cursor-pointer transition-colors duration-350 px-10 max-w-[384px] py-8.5 rounded-[50px]">
+            <div className="mt-25 w-full flex flex-col lg:flex-row justify-between">
+                <div style={{ WebkitTextStroke: "0.5px" }} ref={ref1} className="bg-black mb-10 lg:mb-0 w-fit max-w-[320px] md:max-w-[384px] font-[400] h-fit leading-none flex items-center justify-center border text-start uppercase text-sm md:text-[17px] tracking-tight border-black text-white hover:bg-white hover:text-black cursor-pointer transition-colors duration-350 px-9 md:px-10 py-6 md:py-8.5 rounded-[50px]">
                     Learn more about our design & partnership approach →
                 </div>
                 <div className="min-w-[15%]" />
