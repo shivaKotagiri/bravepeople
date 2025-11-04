@@ -76,7 +76,7 @@ export default function ChallengesSection() {
   return (
     <div
       ref={containerRef}
-      className="w-full max-w-[90rem] mx-auto mt-10 lg:pl-17 pl-10 pr-4 relative"
+      className="w-full max-w-[90rem] mx-auto mt-10 lg:pl-17 md:pl-10 pl-8 pr-4 relative"
       style={{
         fontFamily: "PP Neue Montreal, sans-serif",
         WebkitFontSmoothing: "antialiased",
