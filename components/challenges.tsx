@@ -76,24 +76,26 @@ export default function ChallengesSection() {
   return (
     <div
       ref={containerRef}
-      className="w-full max-w-[90rem] mx-auto mt-10 pl-16 pr-4 relative"
+      className="w-full max-w-[90rem] mx-auto mt-10 lg:pl-17 pl-10 pr-4 relative"
       style={{
         fontFamily: "PP Neue Montreal, sans-serif",
         WebkitFontSmoothing: "antialiased",
         textRendering: "optimizeLegibility",
       }}
     >
-      <div className="pt-[20vh] pb-[40vh]">
-        <div className="w-full max-w-5xl leading-none pb-2.5">
+      <div className="pt-[20%] pb-[40%]">
+        <div className="w-full leading-none pb-2.5">
           <div className="relative z-[2] w-full">
             <div className="mb-16 w-full font-family-pp-mori">
               <TextReveal onScrollAnimation={true} delay={0}>
-                <h2 className="text-[6rem] font-[400] mb-6 text-[#f9f9f9] leading-20 overflow-hidden uppercase">
+                <h2 className="lg:text-[6rem] md:text-[5rem] text-[3.375rem] tracking-tighter w-full font-[400] text-[#f9f9f9] leading-none overflow-hidden uppercase">
                   Your biggest challeng &nbsp;es don&apos;t scare us
                 </h2>
-                <p className="text-2xl text-white leading-relaxed max-w-2xl">
-                  Big or small, 5 employees or 5,000, most organizations face the same challenges at different scales:
-                </p>
+                <div className="w-full mt-5">
+                  <p className="text-2xl text-white leading-relaxed max-w-2xl">
+                    Big or small, 5 employees or 5,000, most organizations face the same challenges at different scales:
+                  </p>
+                </div>
               </TextReveal>
             </div>
           </div>
