@@ -88,8 +88,8 @@ export default function ChallengesSection() {
           <div className="relative z-[2] w-full">
             <div className="mb-16 w-full font-family-pp-mori">
               <TextReveal onScrollAnimation={true} delay={0}>
-                <h2 className="lg:text-[6rem] md:text-[5rem] text-[3.375rem] tracking-tighter w-full font-[400] text-[#f9f9f9] leading-none overflow-hidden uppercase">
-                  Your biggest challeng &nbsp;es don&apos;t scare us
+                <h2 className="lg:text-[6rem] md:text-[5rem] xl:max-w-[62rem] text-[3.375rem] tracking-tighter w-full font-[400] text-[#f9f9f9] leading-none overflow-hidden uppercase">
+                  Your biggest challeng &nbsp;&nbsp;&nbsp;es don&apos;t scare us
                 </h2>
                 <div className="w-full mt-5">
                   <p className="text-2xl text-white leading-relaxed max-w-2xl">
