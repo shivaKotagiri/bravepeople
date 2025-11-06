@@ -15,7 +15,7 @@ export default function Footer() {
         }
     }
     return (
-        <div className="bg-black text-white pt-20 px-[3%] 2xl:px-[8%]">
+        <div className="bg-black text-white lg:pt-20 px-[3%] 2xl:px-[8%]">
             <div className="py-15"><Logo /></div>
             <div className="flex lg:flex-row flex-col lg:justify-between items-start">
                 <div className="flex flex-col w-full lg:max-w-[65%]">
