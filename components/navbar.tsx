@@ -114,7 +114,7 @@ export default function Navbar() {
     }, [hover, width]);
 
     return (
-        <nav className={`fixed z-20 shadow-[0_0_200px_100px_rgba(0,0,0,0.15)] bg-white uppercase text-sm font-medium p-[0.25rem] rounded-[2rem] flex flex-row gap-1 ${width < 1024 ? 'md:w-[95%] w-[90%] justify-between' : 'w-fit'}`}>
+        <nav className={`fixed z-20 shadow-[0_0_200px_50px_rgba(0,0,0,0.15)] bg-white uppercase text-sm font-medium p-[0.25rem] rounded-[2rem] flex flex-row gap-1 ${width < 1024 ? 'md:w-[95%] w-[90%] justify-between' : 'w-fit'}`}>
             <div ref={navRef} className="flex justify-center items-center ml-6 opacity-100">
                 <Image src="/nav-logo.svg" width={16} height={16} alt="Logo" className="size-10" />
             </div>
