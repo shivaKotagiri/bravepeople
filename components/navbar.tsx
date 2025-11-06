@@ -1,36 +1,70 @@
 "use client";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger, SplitText } from "gsap/all";
-gsap.registerPlugin(ScrollTrigger, SplitText)
+import { Menu } from "lucide-react";
+
+gsap.registerPlugin(ScrollTrigger, SplitText);
+
 export default function Navbar() {
     const navRef = useRef<HTMLDivElement | null>(null);
     const [hover, setHover] = useState<boolean>(false);
     const textRef = useRef<HTMLDivElement | null>(null);
     const splitRef = useRef<HTMLDivElement | null>(null);
+    const [width, setWidth] = useState<number>(0);
+    const scrollTriggerRef = useRef<ScrollTrigger | null>(null);
+
+    useEffect(() => {
+        setWidth(window.innerWidth);
+        const handleResize = (): void => setWidth(window.innerWidth);
+        window.addEventListener("resize", handleResize);
+        return () => window.removeEventListener("resize", handleResize);
+    }, []);
 
     useGSAP(() => {
         const nav = navRef.current;
         if (!nav) return;
-        gsap.fromTo(nav, { width: 0, marginLeft: 0, opacity: 0 }, {
-            width: "auto",
-            opacity: 1,
-            marginLeft: "1.5rem",
-            transformOrigin: "center center",
-            scrollTrigger: {
-                trigger: "body", 
-                start: "top top", 
-                end: "bottom top",
-                scrub: true,
-            },
-        });
-    });
+        
+        if (scrollTriggerRef.current) {
+            scrollTriggerRef.current.kill();
+            scrollTriggerRef.current = null;
+        }
+        
+        if (width >= 1024) {
+            const anim = gsap.fromTo(nav, 
+                { width: 0, marginLeft: 0, opacity: 0 }, 
+                {
+                    width: "auto",
+                    opacity: 1,
+                    marginLeft: "1.5rem",
+                    transformOrigin: "center center",
+                    scrollTrigger: {
+                        trigger: "body", 
+                        start: "top top", 
+                        end: "bottom top",
+                        scrub: true,
+                    },
+                }
+            );
+            scrollTriggerRef.current = anim.scrollTrigger as ScrollTrigger;
+        } else {
+            gsap.set(nav, { width: "auto", marginLeft: "1.5rem", opacity: 1 });
+        }
+
+        return () => {
+            if (scrollTriggerRef.current) {
+                scrollTriggerRef.current.kill();
+                scrollTriggerRef.current = null;
+            }
+        };
+    }, [width]);
+
     const timelineRef = useRef<gsap.core.Timeline | null>(null);
+    
     useGSAP(() => {
-        if(!textRef.current) return;
-        if(!splitRef.current) return;
+        if (!textRef.current || !splitRef.current || width < 1024) return;
 
         const splits1 = new SplitText(splitRef.current, { 
             type: "chars, words, lines", 
@@ -66,35 +100,50 @@ export default function Navbar() {
             timelineRef.current?.kill();
             splits1.revert();
             splits2.revert();
-        }
-    }, []); 
+        };
+    }, [width]); 
 
     useGSAP(() => {
-        if(!timelineRef.current) return;
+        if (!timelineRef.current || width < 1024) return;
         
-        if(hover) {
+        if (hover) {
             timelineRef.current.play();
         } else {
             timelineRef.current.reverse();
         }
-    }, [hover]);
+    }, [hover, width]);
 
     return (
-        <nav className="fixed z-20 w-fit shadow-[0_0_200px_50px_rgba(0,0,0,0.15)] bg-white uppercase text-sm font-medium p-[0.25rem] rounded-4xl flex flex-row gap-1">
-            <div ref={navRef} className="flex justify-center items-center">
-                <Image src="/nav-logo.svg" width={16} height={16} alt="Logo" className="size-9" />
+        <nav className={`fixed z-20 shadow-[0_0_200px_100px_rgba(0,0,0,0.15)] bg-white uppercase text-sm font-medium p-[0.25rem] rounded-[2rem] flex flex-row gap-1 ${width < 1024 ? 'md:w-[95%] w-[90%] justify-between' : 'w-fit'}`}>
+            <div ref={navRef} className="flex justify-center items-center ml-6 opacity-100">
+                <Image src="/nav-logo.svg" width={16} height={16} alt="Logo" className="size-10" />
             </div>
-            <div className="hover:bg-[#F0EDE6] cursor-pointer py-3.5 px-5 rounded-3xl">services</div>
-            <div className="hover:bg-[#F0EDE6] cursor-pointer py-3.5 px-5 rounded-3xl">about</div>
-            <div className="hover:bg-[#F0EDE6] cursor-pointer py-3.5 px-5 rounded-3xl">work</div>
-            <div className="hover:bg-[#F0EDE6] cursor-pointer py-3.5 px-5 rounded-3xl">insights</div>
-            <div 
-                onMouseEnter={() => setHover(true)} 
-                onMouseLeave={() => setHover(false)}
-                className="hover:bg-white overflow-hidden relative transition-colors duration-300 hover:text-black border cursor-pointer py-3 px-[50px] rounded-4xl bg-black text-[14px] text-white flex justify-center tracking-tighter items-center w-[9.2rem]">
-                <div ref={splitRef} className="absolute inset-0 flex justify-center items-center z-0">work&nbsp;with&nbsp;us</div>
-                <div ref={textRef} className="absolute inset-0 flex justify-center items-center z-10">work&nbsp;with&nbsp;us</div>
-            </div>
+            
+            {width >= 1024 ? (
+                <>
+                    <div className="hover:bg-[#F0EDE6] cursor-pointer py-3.5 px-5 rounded-3xl">services</div>
+                    <div className="hover:bg-[#F0EDE6] cursor-pointer py-3.5 px-5 rounded-3xl">about</div>
+                    <div className="hover:bg-[#F0EDE6] cursor-pointer py-3.5 px-5 rounded-3xl">work</div>
+                    <div className="hover:bg-[#F0EDE6] cursor-pointer py-3.5 px-5 rounded-3xl">insights</div>
+                    <div 
+                        onMouseEnter={() => setHover(true)} 
+                        onMouseLeave={() => setHover(false)}
+                        className="hover:bg-white overflow-hidden relative transition-colors duration-300 hover:text-black border cursor-pointer py-3 px-[50px] rounded-[2rem] bg-black text-[14px] text-white flex justify-center tracking-tighter items-center w-[9.2rem]"
+                    >
+                        <div ref={splitRef} className="absolute inset-0 flex justify-center items-center z-0">work&nbsp;with&nbsp;us</div>
+                        <div ref={textRef} className="absolute inset-0 flex justify-center items-center z-10">work&nbsp;with&nbsp;us</div>
+                    </div>
+                </>
+            ) : (
+                <div className="flex items-center gap-2">
+                    <div className="cursor-pointer flex items-center uppercase text-[15px]">
+                        Menu
+                    </div>
+                    <div className="flex justify-center items-center bg-black rounded-full text-[2.5rem] w-10 h-10 text-white">
+                        ✺
+                    </div>
+                </div>
+            )}
         </nav>
-    )
+    );
 }

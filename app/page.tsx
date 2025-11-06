@@ -5,7 +5,7 @@ import ProofOfWork from "@/pages/proof-of-work";
 import { containerContext } from "@/utils/context/containerContext";
 import { timelineContext } from "@/utils/context/timeline";
 import gsap from "gsap";
-export default function Home() {
+export default function Home() {  
   const containerRef = useRef<HTMLDivElement | null>(null);
   const timelineRef = useRef<gsap.core.Timeline | null>(null);
   
@@ -17,7 +17,7 @@ export default function Home() {
     if(timelineRef.current) {
       timelineRef.current.play();
     } 
-  }, []);
+  }, [])
 
   return (
     <div ref={containerRef} className="w-full overflow-x-hidden h-fit flex flex-col justify-center bg-[#F9F9F9] items-center">
