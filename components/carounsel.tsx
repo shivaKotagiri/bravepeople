@@ -8,18 +8,23 @@ import { lists } from "@/utils/data/lists";
 export default function Carousel() {
     const [currentIndex, setCurrentIndex] = useState(0);
     const [cardWidth, setCardWidth] = useState(432);
+    const [cardSize, setCardSize] = useState(432);
 
     useEffect(() => {
         const updateCardWidth = () => {
             const width = window.innerWidth;
             if (width < 640) {
                 setCardWidth(280 + 20);
+                setCardSize(280);
             } else if (width < 768) {
                 setCardWidth(320 + 30);
+                setCardSize(320);
             } else if (width < 1024) {
                 setCardWidth(400 + 40);
+                setCardSize(400);
             } else {
                 setCardWidth(432 + 50);
+                setCardSize(432);
             }
         };
 
@@ -64,8 +69,8 @@ export default function Carousel() {
                                 key={index}
                                 className="relative rounded-2xl sm:rounded-3xl lg:rounded-[40px] flex-shrink-0 overflow-hidden"
                                 style={{
-                                    width: window.innerWidth >= 1280 ? 432 : window.innerWidth >= 1024 ? 400 : window.innerWidth >= 768 ? 320 : 280,
-                                    height: window.innerWidth >= 1280 ? 432 : window.innerWidth >= 1024 ? 400 : window.innerWidth >= 768 ? 320 : 280
+                                    width: cardSize,
+                                    height: cardSize
                                 }}
                             >
                                 <Image
