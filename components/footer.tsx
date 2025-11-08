@@ -2,7 +2,7 @@
 import { ChangeEvent, useState } from "react";
 import { company, discover, learn } from "@/utils/data/footer";
 import FooterLinks from "./ui/footer-links";
-import Logo from "./ui/logo";
+import Logo from "./ui/svg/logo";
 
 export default function Footer() {
     const [mail, setMail] = useState("Your email here");
