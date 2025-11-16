@@ -105,7 +105,7 @@ export default function Navbar() {
                         hover_text={menuOpen ? "text-white" : "text-black"} 
                         width="w-[9.2rem]" 
                         textSize="text-[14px]" 
-                        padding="py-3 px-[50px]" 
+                        padding="py-5 px-[50px]" 
                     />
                 </>
             ) : (
