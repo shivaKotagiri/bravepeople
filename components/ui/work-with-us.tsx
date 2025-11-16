@@ -76,7 +76,7 @@ export default function WorkWithUs({ backgroundColor, textColor, hover_bg, hover
         <div 
             onMouseEnter={() => setHover(true)} 
             onMouseLeave={() => setHover(false)}
-            className={`hover:${hover_bg} overflow-hidden relative transition-colors duration-300 hover:${hover_text} border cursor-pointer ${padding} rounded-[2rem] ${backgroundColor} ${textSize} ${textColor} flex justify-center items-center ${width}`}
+            className={`hover:${hover_bg} overflow-hidden relative font-[500] transition-colors duration-300 hover:${hover_text} border cursor-pointer ${padding} rounded-[2rem] ${backgroundColor} ${textSize} ${textColor} flex justify-center items-center ${width}`}
         >
             <div ref={splitRef} className="absolute inset-0 flex justify-center items-center z-0">work &nbsp;with&nbsp; us</div>
             <div ref={textRef} className="absolute inset-0 flex justify-center items-center z-10">work &nbsp;with&nbsp; us</div>
