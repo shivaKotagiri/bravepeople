@@ -37,7 +37,7 @@ export default function AnimatedSection() {
 
   return (
     <div ref={sectionRef} className="w-full flex flex-col">
-      <div className="w-full px-[3%] 2xl:px-[8%]">
+      <div className="w-full px-[3.5%] lg:px-[5%] xl:px-[8%]">
         <BentoGrid />
         <ChallengesSection />
         <Carousel />

@@ -7,7 +7,6 @@ import gsap from "gsap";
 import Testimonial from "@/components/ui/testimonial";
 import TrustedBy from "@/components/trustedby";
 import ProjectPath from "@/components/project-path";
-import Footer from "@/components/footer";
 
 gsap.registerPlugin(ScrollTrigger);
 export default function Part3() {
@@ -16,7 +15,6 @@ export default function Part3() {
     useEffect(() => {
         const el = sectionRef.current;
         if (!el) return;
-
         gsap.fromTo(
         el,
         { backgroundColor: "black", color: "white" },
@@ -36,12 +34,12 @@ export default function Part3() {
     }, []);
     return (
         <div className="flex flex-col w-full justify-center" ref={sectionRef}>
-            <div className="w-full flex flex-col justify-center px-[3%] 2xl:px-[8%]">
+            <div className="w-full flex flex-col justify-center px-[3%] lg:px-[5%] xl:px-[8%]">
                 <Testimonial />
                 <Headline />
             </div>
             <TrustedBy />
-            <div className="w-full flex flex-col justify-center px-[3%] 2xl:px-[8%]">
+            <div className="w-full flex flex-col justify-center px-[3%] lg:px-[5%] xl:px-[8%]">
                 <ProjectPath />
             </div>
         </div>

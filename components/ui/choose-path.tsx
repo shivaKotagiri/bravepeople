@@ -17,21 +17,21 @@ export default function ChoosePath({ title, link, text, para}: Props) {
         <div
             onMouseEnter={() => setHover(true)}
             onMouseLeave={() => setHover(false)}
-            className="relative w-full md:h-[780px] h-[492px] border cursor-pointer hover:border-transparent border-neutral-400 rounded-[40px] text-black hover:text-white">
+            className="relative w-full md:h-[780px] h-[492px] border cursor-pointer hover:border-transparent border-neutral-400 md:rounded-[40px] rounded-[30px] text-black hover:text-white">
             <Image 
-                className={`absolute inset-0 rounded-[40px] transition-opacity duration-500 ${hover ? "opacity-100": "opacity-0"}`}
+                className={`absolute inset-0 md:rounded-[40px] rounded-[30px] transition-opacity duration-500 ${hover ? "opacity-100": "opacity-0"}`}
                 alt="image1" 
                 fill
                 style={{ objectFit: 'cover' }}
                 src={link} 
             />
-            <div className="absolute inset-0 lg:p-15 p-[5%] flex flex-col justify-between items-start">
+            <div className="absolute inset-0 md:p-15 p-10 flex flex-col justify-between items-start">
                 <div className="flex flex-col">
-                    <div className="md:text-6xl text-[2.75rem] font-[500] mt-5 lg:mt-[30%]">{ title }</div>
+                    <div className="md:text-6xl text-[2.25rem] font-[500] mt-5 md:mt-[20%] lg:mt-[30%]">{ title }</div>
                     <div className="px-4 py-1 border w-fit rounded-2xl font-[500] mt-5">{ text }</div>
                 </div>
                 <div className="flex flex-col">
-                    <div className="max-w-lg text-2xl font-[500]">
+                    <div className="max-w-lg text-[1.25rem] md:text-2xl font-[500]">
                         { para }
                     </div>
                     <motion.div
